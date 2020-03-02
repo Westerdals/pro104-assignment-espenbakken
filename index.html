@@ -1,7 +1,37 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Arbeidskrav</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <script src="index.js"></script>
+        <!-- Hoved-div til alt innhold -->
+        <div id="main-div">
+            <h1 id="title">Arbeidsoppgaver</h1>
 
-hei.
-heisann
-hallo 
+            <!--Alle input har fått hver sin div for å få de på ny linje-->
+            <div id="input-div">
+                <div>
+                    <div><label for="Hei" >Teammedlem:</label></div>
+                    <input type="text" placeholder="Teammedlem">
+                </div><br>
 
+                <div>
+                    <div><label>Arbeidsoppgave:</label></div>
+                    <input type="text" placeholder="Arbeidsoppgave">
+                </div><br>
 
+                <div>
+                    <div><label>Hva går oppgaven ut på?</label></div>
+                    <textarea name="description" placeholder="En beskrivelse av arbeidsoppgaven"></textarea>
+                </div>
 
+                <div><input type="submit"></div>
+            </div>
+
+            <div id="output-div"></div>
+            
+        </div>
+    </body>
+</html>
