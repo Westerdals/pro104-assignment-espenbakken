@@ -1,5 +1,6 @@
 body {
     background-color: #a1e6e3;
+    display:grid;
 }
 #main-div {
     width: 1200px;
