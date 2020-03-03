@@ -1,8 +1,4 @@
 
-/*const submitBtn = document.getElementById("submit-btn"); 
-submitBtn.onclick = createNew(event);*/
-
-
 function renderList (){
     const outputList = JSON.parse(window.localStorage.getItem("outputList")) || [];
 
