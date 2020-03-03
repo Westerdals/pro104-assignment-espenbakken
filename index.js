@@ -1,11 +1,22 @@
 
-const submitBtn = document.getElementById("submit-btn"); 
-submitBtn.onclick = createNew;
+/*const submitBtn = document.getElementById("submit-btn"); 
+submitBtn.onclick = createNew(event);*/
 
 
 function renderList (){
     const outputList = JSON.parse(window.localStorage.getItem("outputList")) || [];
 
+    const outputListTwo = document.getElementById("outputList");
+    outputListTwo.innerHTML = "";
+    for(const product of outputList){
+        const productTwo = document.createElement("div");
+        const {name, price, description} = product;
+        
+        productTwo.innerHTML = "<h4>" + name + "</h4>" + 
+            "<div>" + description + "</div>" +  
+            "<div><small>Price: " + price + "</small></div>";
+        outputListTwo.appendChild(productTwo);
+    }
 }
 
 function createNew(event){
@@ -24,3 +35,9 @@ function createNew(event){
 
     event.target.reset();
 }
+
+window.addEventListener("storage", function(event){
+    if (event.key === "outputlist"){
+        renderList();
+    }
+});
