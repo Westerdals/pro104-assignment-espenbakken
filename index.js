@@ -10,11 +10,11 @@ function renderList (){
     outputListTwo.innerHTML = "";
     for(const product of outputList){
         const productTwo = document.createElement("div");
-        const {name, price, description} = product;
+        const {member, task, description} = product;
         
-        productTwo.innerHTML = "<h4>" + name + "</h4>" + 
-            "<div>" + description + "</div>" +  
-            "<div><small>Price: " + price + "</small></div>";
+        productTwo.innerHTML = "<h4>" + member + "</h4>" + 
+            "<div>Arbeidsoppgave: " + task + "</div>" +  
+            "<div>Arbeidsbeskrivelse: " + description + "</div>";
         outputListTwo.appendChild(productTwo);
     }
 }
