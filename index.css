@@ -37,7 +37,12 @@ body {
 }
 
 #outputList{
-    right: 400px;
+    right: 800px;
     position: absolute;
-    top: 100px; 
+    top: 500px; 
+    width: 250px;
+    height: 350px;
+    background-color: #fafba4;
+    border: 2px solid black;
+
 }
