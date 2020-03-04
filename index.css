@@ -37,11 +37,11 @@ body {
 }
 
 #outputList{
-    right: 800px;
+    right: 400px;
     position: absolute;
-    top: 500px; 
-    width: 250px;
-    height: 350px;
+    top: 100px; 
+    width: 350px;
+    height: auto;
     background-color: #fafba4;
     border: 2px solid black;
 
