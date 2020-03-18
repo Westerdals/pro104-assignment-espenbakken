@@ -8,12 +8,49 @@
     <body>
         <script src="index.js"></script>
         <!-- Hoved-div til alt innhold -->
-        <form id="main-div" onsubmit="createNew(event)">
-            <h1 id="title">Arbeidsoppgaver</h1>
-
+        <div id="main-div">
+            <h1 id="title">Oppgavefordeling</h1>
+            <div id="input-div-medlem">
+                <form onsubmit="createNewMember(event)">
+                    <h4>Nytt medlem</h4>
+                    
+                    <div class="input"><input class="field" id="member-input" type="text" placeholder="Navn på nytt medlem"></div>
+                    <!--<div class="input"><input type="file" name="picture" placeholder="Upload picture"/></div>-->
+                    <div class="input"><input id="submit-btn" class="btn" type="submit"></div>
+                </form>
+            </div>
+            <div id="input-div-oppgave">
+                <form onsubmit="createNewTask(event)">
+                    <h4>Ny oppgave</h4>
+                    <div>
+                        <div class="input"><input class="field" id="name" type="text" placeholder="Arbeidsppgave"></div>
+                        <div class="input"><textarea class="field" name="task" placeholder="En beskrivelse av arbeidsoppgaven"></textarea></div>
+                        <div class="input"><input id="submit-btn" class="btn" type="submit"></div>
+                    </div>
+                </form>
+            </div>
+            <div id="list-opp-medlemmer">
+                <h3>Medlemmer</h3>
+                <div id="outputMembers"></div>
+            </div>
+            <div id="list-opp-oppgaver">
+                <h3>Oppgaver</h3>
+                <div id="outputTasks"></div>
+            </div>
+            <div id="tildel-oppgave">
+                <h3>Tildel et medlem en oppgave</h3>
+                <input class="field" type="text" placeholder="Teammedlem">
+                <label>-</label>
+                <input class="field" type="text" placeholder="Oppgave">
+                <input class="btn" type="submit">
+                <h3></h3>
+            </div>
+            <div id="fordeling-av-oppgaver">
+                <h3>Fordeling av oppgaver</h3>
+            </div>
             <!--Alle input har fått hver sin div for å få de på ny linje-->
             <!--onsubmit="createNew(event)" lå i diven under -->
-            <div id="input-div" >
+           <!-- <div id="input-div" >
                 <div>
                     <div><label>Teammedlem:</label></div>
                     <input id="member-input" type="text" placeholder="Teammedlem">
@@ -32,8 +69,12 @@
                 <div><input id="submit-btn" type="submit"></div>
             </div>
 
-            <div id="outputList"></div>
+            <div id="outputList"></div>-->
             
-        </form>
+        </div>
+        <script>
+            renderMembers();
+            renderTasks();
+        </script>
     </body>
 </html>
