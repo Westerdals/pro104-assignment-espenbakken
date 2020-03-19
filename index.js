@@ -35,7 +35,7 @@ function renderTasks(){
         const productTwo = document.createElement("div");
         const {task, name} = product;
         
-        productTwo.innerHTML = "<h4>" + product.name + "</h4>" + "<p>" + product.task + "</p>" ;
+        productTwo.innerHTML = "<div class='task'><h4>" + product.name + "</h4>" + "<p>" + product.task + "</p></div>" ;
         outputTaskEl.appendChild(productTwo);
     }
 }
@@ -64,7 +64,7 @@ function renderOppgaver(){
         const productTwo = document.createElement("div");
         const {teammedlem, tildeltOppgave} = product;
 
-        productTwo.innerHTML = "<h4>" + teammedlem + "</h4>" + "<p>" + tildeltOppgave + "</p>";
+        productTwo.innerHTML = "<div class='task'><h4>" + teammedlem + "</h4>" + "<p>" + tildeltOppgave + "</h4></div>";
         outputOppgaveEl.appendChild(productTwo);
     }
 }

@@ -1,40 +1,43 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Arbeidskrav</title>
-        <link rel="stylesheet" href="index.css">
+        <title>Arbeidskrav - Gruppe #5</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
         <link rel="icon" type="image/png" href="images/favicon.ico" sizes="16x16" />
     </head>
     <body>
+        <!--Alle funksjoner ligger tilgjengelig i denne filen-->
         <script src="index.js"></script>
         <!-- Hoved-div til alt innhold -->
         <div id="main-div">
             <h1 id="title">Oppgavefordeling</h1>
+            <h1 id="nr">#5</h1>
             <div id="input-div-medlem">
+                <!--Alle input har fått hver sin div for å få de på ny linje-->
                 <form onsubmit="createNewMember(event)">
                     <h4>Nytt medlem</h4>
-                    
                     <div class="input"><input class="field" id="member-input" type="text" placeholder="Navn på nytt medlem"></div>
-                    <div class="input-pic"><input type="file" name="picture" placeholder="Upload picture"/></div>
-                    <div class="input"><input id="submit-btn" class="btn" type="submit" value="Legg til medlem"></div>
+                    <div class="input-pic"><input type="file" name="picture" /></div>
+                    <div class="input"><input id="submit-btn" class="btn" type="submit" value="Legg til medlem" title="Trykk for å legge til nytt medlem"></div>
                 </form>
             </div>
             <div id="input-div-oppgave">
+                <!--Alle input har fått hver sin div for å få de på ny linje-->
                 <form onsubmit="createNewTask(event)">
                     <h4>Ny oppgave</h4>
-                    <div>
-                        <div class="input"><input class="field" id="name" type="text" placeholder="Arbeidsppgave"></div>
-                        <div class="input"><textarea class="field" name="task" placeholder="En beskrivelse av arbeidsoppgaven"></textarea></div>
-                        <div class="input"><input id="submit-btn" class="btn" type="submit" value="Legg til oppgave"></div>
-                    </div>
+                    <div class="input"><input class="field" id="name" type="text" placeholder="Arbeidsppgave"></div>
+                    <div class="input"><textarea class="field" name="task" placeholder="En beskrivelse av arbeidsoppgaven"></textarea></div>
+                    <div class="input"><input id="submit-btn" class="btn" type="submit" value="Legg til oppgave" title="Trykk for å legge til den nye oppgaven"></div>
                 </form>
             </div>
             <div id="list-opp-medlemmer">
                 <h3>Medlemmer</h3>
+                <!--I denne diven skrives alle medlemmer ut med funksjonen renderMembers()-->
                 <div id="outputMembers"></div>
             </div>
             <div id="list-opp-oppgaver">
                 <h3>Oppgaver</h3>
+                <!--I denne diven skrives alle medlemmer ut med funksjonen renderTasks()-->
                 <div id="outputTasks"></div>
             </div>
             <div id="tildel-oppgave">
@@ -48,31 +51,9 @@
             </div>
             <div id="fordeling-av-oppgaver">
                 <h3>Fordeling av oppgaver</h3>
+                <!-- I denne diven skrives alle tildelte oppgaver ut med funksjonen renderOppgaver()-->
                 <div id="outputOppgaver"></div>
             </div>
-            <!--Alle input har fått hver sin div for å få de på ny linje-->
-            <!--onsubmit="createNew(event)" lå i diven under -->
-           <!-- <div id="input-div" >
-                <div>
-                    <div><label>Teammedlem:</label></div>
-                    <input id="member-input" type="text" placeholder="Teammedlem">
-                </div><br>
-
-                <div>
-                    <div><label>Arbeidsoppgave:</label></div>
-                    <input id="task-input" type="text" placeholder="Arbeidsoppgave">
-                </div><br>
-
-                <div>
-                    <div><label>Hva går oppgaven ut på?</label></div>
-                    <textarea id="desc-input" name="description" placeholder="En beskrivelse av arbeidsoppgaven"></textarea>
-                </div>
-
-                <div><input id="submit-btn" type="submit"></div>
-            </div>
-
-            <div id="outputList"></div>-->
-            
         </div>
         <script>
             renderMembers();
