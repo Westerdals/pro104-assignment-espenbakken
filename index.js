@@ -1,4 +1,3 @@
-
 function renderMembers (){
     const outputMembers = JSON.parse(window.localStorage.getItem("outputMembers")) || [];
 
@@ -6,9 +5,8 @@ function renderMembers (){
     outputMembersEl.innerHTML = "";
     for(const product of outputMembers){
         const productTwo = document.createElement("div");
-        const {member} = product;
-        
-        productTwo.innerHTML = "<h4>" + member + "</h4>" ;
+        const {member,picture} = product;
+        productTwo.innerHTML = "<div>" + (picture ? "<div><img height='100px' src='images/" + picture +"'/></div>" :"") + "<h4>" + member + "</h4>" + "</div>"
         outputMembersEl.appendChild(productTwo);
     }
 }
@@ -17,11 +15,9 @@ function createNewMember(event){
     event.preventDefault();
 
     const member = document.getElementById("member-input").value;
-    /*const task = document.getElementById("task-input").value;
-    const description = document.querySelector("[name='description']").value;
-*/
-    const product = {member};
-
+    const picture = document.querySelector("[name='picture']").files.item(0).name;
+    const product = {member, picture};
+    
     const outputMembers = JSON.parse(window.localStorage.getItem("outputMembers")) || [];
     outputMembers.push(product);
     window.localStorage.setItem("outputMembers", JSON.stringify(outputMembers)); 
@@ -30,12 +26,6 @@ function createNewMember(event){
     event.target.reset();
 }
 
-/*window.addEventListener("storage", function(event){
-    if (event.key === "outputlist"){
-        renderList();
-    }
-});*/
-
 function renderTasks(){
     const outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
 
@@ -43,9 +33,9 @@ function renderTasks(){
     outputTaskEl.innerHTML = "";
     for(const product of outputTask){
         const productTwo = document.createElement("div");
-        const {task} = product;
+        const {task, name} = product;
         
-        productTwo.innerHTML = "<h4>" + task + "</h4>" ;
+        productTwo.innerHTML = "<h4>" + product.name + "</h4>" + "<p>" + product.task + "</p>" ;
         outputTaskEl.appendChild(productTwo);
     }
 }
@@ -53,9 +43,9 @@ function renderTasks(){
 function createNewTask(event){
     event.preventDefault();
 
+    const name = document.getElementById("name").value;
     const task = document.querySelector("[name='task']").value;
-
-    const product = {task};
+    const product = {task, name};
 
     const outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
     outputTask.push(product);
@@ -63,4 +53,34 @@ function createNewTask(event){
     renderTasks();
 
     event.target.reset();
+}
+
+function renderOppgaver(){
+    const outputOppgave = JSON.parse(window.localStorage.getItem("outputOppgave")) || [];
+
+    const outputOppgaveEl = document.getElementById("outputOppgaver");
+    outputOppgaveEl.innerHTML = "";
+    for(const product of outputOppgave){
+        const productTwo = document.createElement("div");
+        const {teammedlem, tildeltOppgave} = product;
+
+        productTwo.innerHTML = "<h4>" + teammedlem + "</h4>" + "<p>" + tildeltOppgave + "</p>";
+        outputOppgaveEl.appendChild(productTwo);
+    }
+}
+
+function assignTasks(event){
+    event.preventDefault();
+
+    const teammedlem = document.getElementById("teammedlem").value;
+    const tildeltOppgave = document.getElementById("tildelt-oppgave").value; 
+    const product = {teammedlem, tildeltOppgave}; 
+
+    const outputOppgave = JSON.parse(window.localStorage.getItem("outputOppgave")) || [];
+    outputOppgave.push(product);
+    window.localStorage.setItem("outputOppgave", JSON.stringify(outputOppgave));
+    renderOppgaver();
+
+    event.target.reset();
+
 }
