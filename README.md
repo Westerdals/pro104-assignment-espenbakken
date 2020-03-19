@@ -1,9 +1,8 @@
 # Arbeidskrav
 Gruppe #5
 
-Dette er vår levering av arbeidskravet i faget PRO-104. Deltakere på gruppa er:  
+Dette er min innlevering av ekstrakravet mitt i faget PRO-104. Innlevering er kodet på egen branch av Espen Bakken. Øvrige gruppemedlemmer er: 
 - Sarah Christine van Dijk
 - Bilal Haider Mohammed
 - Aina Renate Vaagø
 - Manjot Singh Warraich
-- Espen Bakken 
