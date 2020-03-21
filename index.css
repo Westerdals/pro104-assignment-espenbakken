@@ -26,7 +26,7 @@ body {
 
 #input-div {
     position: absolute;
-    left: 150px;
+    left: 200px;
     top: 100px;
     background-color: #fafba4;
     width: 250px;
@@ -37,12 +37,16 @@ body {
 }
 
 #outputList{
+<<<<<<< HEAD
     right: -400px;
+=======
+    right: 200px;
+>>>>>>> fbc711f2162c790277da0975b5b7318b1b0620ba
     position: absolute;
     top: 0px; 
     width: 350px;
     height: auto;
     background-color: #fafba4;
     border: 2px solid black;
-
+    padding-left: 10px;
 }
